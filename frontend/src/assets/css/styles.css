@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+/* fonte ubunto do google fonts e os pesos que agente quer massa */
+
+:root {/* variaveis globalmente*/
+    --color-primary: #FF8400;
+}
+
+html, body {
+    height: 100%;/* ocupa 100% da altura e a fontfamily a ubunto que importamos do google*/
+    font-family: "Ubuntu", sans-serif;
+}
+
+#root {
+    display: flex; /* parte do rodabe massetes do css*/
+    flex-direction: column;
+    height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.bg-primary {/* as cor que fizemos lá encima */
+    background-color: var(--color-primary) !important;
+}
+
+.text-primary {
+    color: var(--color-primary) !important;
+}
