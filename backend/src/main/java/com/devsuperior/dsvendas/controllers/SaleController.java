@@ -1,5 +1,7 @@
 package com.devsuperior.dsvendas.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.dsvendas.dto.SaleDTO;
+import com.devsuperior.dsvendas.dto.SaleSuccessDTO;
+import com.devsuperior.dsvendas.dto.SaleSumDTO;
 import com.devsuperior.dsvendas.service.SaleService;
 
 @RestController 
@@ -25,5 +29,17 @@ public class SaleController {
 		Page<SaleDTO> list = service.findAll(pageable);
 		return  ResponseEntity.ok(list);
 	}
+	//É A SOMA DAS VENDAS POR VENDEDOR
+	@GetMapping(value = "/amount-by-seller") //DO TIPO LIST SALESUMDTO LISTA DE VENDEDOR E SOMA
+	public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller() {
+		List<SaleSumDTO> list = service.amountGroupedBySeller();//A CHAMADA DO SERVICE VAI SER O MSM NOME amountGroupedBySeller
+		return  ResponseEntity.ok(list);
+	}
+	@GetMapping(value = "/success-by-seller") //DO TIPO LIST SALESUMDTO LISTA DE VENDEDOR E SOMA
+	public ResponseEntity<List<SaleSuccessDTO>> successGroupedBySeller() {
+		List<SaleSuccessDTO> list = service.successGroupedBySeller();//A CHAMADA DO SERVICE VAI SER O MSM NOME amountGroupedBySeller
+		return  ResponseEntity.ok(list);
+	}
 
-}
+
+} 
