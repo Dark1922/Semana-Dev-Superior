@@ -43,7 +43,7 @@ const BarChat = () => { //barra de chat
     setChartData({ 
         labels: {
             categories: myLabels
-        },
+        },  
         series: [
             {
                 name: "% Success",
