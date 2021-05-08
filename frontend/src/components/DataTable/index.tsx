@@ -1,10 +1,14 @@
 import axios from "axios";
+import Pagination from "components/Pagination";
 import { useEffect, useState } from "react";
 import { SalePage } from "types/sale";
 import { formatLocalDate } from "utils/format";
 import { BASE_URL } from "utils/requests";
 
 const DataTable = () => {
+    //n precisa parametizar pq vai ser um numero ent deixa so de valor 0 inicial
+    const [activePage, setActivePage] = useState(0);
+
     const [page, setPage] = useState<SalePage>({ 
         first: true, //primeira pagina
         last: true,  //ultima pagina 
@@ -14,16 +18,23 @@ const DataTable = () => {
 
     });
    
-     useEffect(() => { //só qnd a página carregar
-        //pagina 0 cada pagina tem 20 size elementos , e está decrescente 10 9 8 algo assim
-        axios.get(`${ BASE_URL}/sales?page=0&size=20sort=date,desc`)
-        .then(response =>  {//se deu certo vou atribuir essa resposta no meu page do useSatate page
-            setPage(response.data); //pego o corpo da resposta e jogo no page
+     useEffect(() => { //vamos passar nossa ativação de pagina aqui onde era o numero da página
+        axios.get(`${ BASE_URL}/sales?page=${activePage}&size=20sort=date,desc`)
+        .then(response =>  {
+            setPage(response.data); 
         }) 
 
-     }, []) //[] niguem tá sendo observado ainda
+     }, [activePage]) //ta observado o activePage
+
+    
+     const changePage = (index: number) => {
+         
+        setActivePage(index); 
+     }
 
   return (
+      <>
+      <Pagination page={page} onPageChange={changePage} />
     <div className="table-responsive">
     <table className="table table-striped table-sm">
         <thead>
@@ -49,8 +60,9 @@ const DataTable = () => {
            
         </tbody>
     </table>
-</div>
+ </div>
+
+  </>
     );
 }
 export default DataTable;
-//contente é a lista  de Sale vai pegar o meu objeto page no campo content vou colocar interrogação porque eu vou fazer assim se o contente estiver definido ele valer uma lista de verdade  ai sim eu vou chamar dentro dele  o .map  pra cada objeto que eu um i ou x  eu vou retornar o bloquinho do tr , podemos dar qualquer nome mas botamos item pra ficar mais entendivel// qnd vc está renderizando um coleção vc tem que colocar um id ent temos que por o "key" no tr da tabela  que vai passar um id unico para cada coleção
