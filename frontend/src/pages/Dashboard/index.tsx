@@ -15,11 +15,11 @@ const Dashboard = () => { //array function variavel const
   
       <div className="row px-3">
         <div className="col-sm-6">
-        <h5 className="text-center">Taxas de sucesso(%)</h5>
+        <h5 className="text-center text-secondary">Taxas de sucesso(%)</h5>
           <BarChat />
         </div>
         <div className="col-sm-6">
-          <h5 className="text-center">Todas as vendas</h5>
+          <h5 className="text-center text-secondary">Todas as vendas</h5>
           <DonutChart />
         </div>
         </div> 
