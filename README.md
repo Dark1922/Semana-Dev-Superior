@@ -1,3 +1,4 @@
 # Semana-Dev-Superior graficos
 
- https://user-images.githubusercontent.com/48605830/117578201-9af83080-b0c3-11eb-81f8-aeac53d78170.gif
+![dsvendas](https://user-images.githubusercontent.com/48605830/117578313-1bb72c80-b0c4-11eb-8697-7b11c9e2fdd0.gif)
+
