@@ -22,3 +22,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 <p align="justify"> Um site de DSvendas com gráficos de porcentagem de sucessos dos vendedores com busca de dentro da api rest Spring , e ReactJS e tabela de cada venda dos vendedor as datas com o preço também , e a comunicação entre componentes para mudar a página de cada 20 elementos da api forma 1 página contendo 9 ao todo usando os estados do React.  </p>
+
+```bash
+#Clonar repositório
+git clone git@github.com:Dark1922/Semana-Dev-Superior.git
+
+#Executar o projeto
+dentro do terminal do projeto vai digitar o 'yarn' pra instalar as dependências
+após isso só dar o 'yarn dev' sem as aspas.
+```
