@@ -25,10 +25,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ```bash
 #Clonar repositório
-git clone gh repo clone Dark1922/To-Do-Spring-Viceri
+git clone gh gh repo clone Dark1922/Semana-Dev-Superior
 
-#Executar o projeto
+#Executar o projeto java
 mvn clean install
+
+#Executar o projeto react
+yarn install
 
 verificar dados do banco de dados se conferem, e rodar o start da idea ultilizada.
 ```
