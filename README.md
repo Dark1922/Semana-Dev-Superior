@@ -25,9 +25,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ```bash
 #Clonar repositório
-git clone git@github.com:Dark1922/Semana-Dev-Superior.git
+git clone gh repo clone Dark1922/To-Do-Spring-Viceri
 
 #Executar o projeto
-dentro do terminal do projeto vai digitar o 'yarn' pra instalar as dependências
-após isso só dar o 'yarn dev' sem as aspas.
+mvn clean install
+
+verificar dados do banco de dados se conferem, e rodar o start da idea ultilizada.
 ```
